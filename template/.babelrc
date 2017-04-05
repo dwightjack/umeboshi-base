@@ -1,0 +1,27 @@
+{
+    "presets": [
+        ["es2015", {"loose": true, "modules": false}]
+    ],
+
+    "env": {
+        "development": {
+            "plugins" : [
+                "transform-object-rest-spread",
+                ["transform-runtime", {"polyfill": false, "regenerator": false }]
+            ]
+        },
+        "production": {
+            "plugins": [
+                "transform-object-rest-spread",
+                ["transform-runtime", {"polyfill": false, "regenerator": false }]
+            ]
+        },
+        "test": {
+            "plugins": [
+                "transform-es2015-modules-commonjs",
+                "transform-object-rest-spread",
+                ["transform-runtime", {"polyfill": false, "regenerator": false }]
+            ]
+        }
+    }
+}
