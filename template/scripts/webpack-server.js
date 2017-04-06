@@ -10,28 +10,17 @@ const middlewares = require('./middlewares');
 const publicPath = `http://${address}:${localhost.port}${paths.publicPath}`;
 
 const config = merge.smart({
-    entry: {
-        app: [
-            'eventsource-polyfill', // Necessary for hot reloading with IE
-            {{#if_eq templateName 'react'}}'react-hot-loader/patch',{{/if_eq}}
-            'webpack-dev-server/client?http://' + address + ':' + localhost.port,
-            'webpack/hot/only-dev-server'
-        ]
-    },
     output: {
         publicPath
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
-}, require('../config/webpack.dev'));
+    }
+}, require('../config/webpack.server'), require('../config/webpack.dev'));
 
 const compiler = webpack(config);
 
 const server = new WebpackDevServer(compiler, {
     contentBase: paths.toAbsPath('dist.root'),
     compress: false,
-    hot: true,
+    hot: false,
     historyApiFallback: true,
     //TODO: temporary fix for https://github.com/mxstbr/react-boilerplate/issues/370 and https://github.com/webpack/style-loader/pull/96
     publicPath,
