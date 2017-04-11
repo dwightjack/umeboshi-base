@@ -20,7 +20,7 @@ const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
     contentBase: paths.toAbsPath('dist.root'),
     compress: false,
-    hot: {{HMR}},
+    hot: {{tmpl.hmr}},
     historyApiFallback: true,
     //TODO: temporary fix for https://github.com/mxstbr/react-boilerplate/issues/370 and https://github.com/webpack/style-loader/pull/96
     publicPath,
