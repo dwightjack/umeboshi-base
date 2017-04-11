@@ -8,7 +8,7 @@ const webpackConf = require('./webpack.base');
 const paths = require('./paths');
 
 module.exports = merge.smart(webpackConf, {
-
+    {{!-- CONF_START --}}
     entry: {
         app: [
             './' + paths.toPath('src.assets/styles') + '/index.js',
@@ -22,6 +22,7 @@ module.exports = merge.smart(webpackConf, {
     },
 
     plugins: [
+        {{!-- PLUGINS_START --}}
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compressor: {
@@ -65,5 +66,7 @@ module.exports = merge.smart(webpackConf, {
         }),
 
         new webpack.HashedModuleIdsPlugin()
+        {{!-- PLUGINS_END --}}
     ]
+    {{!-- CONF_END --}}
 });

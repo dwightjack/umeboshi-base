@@ -7,7 +7,7 @@ const paths = require('./paths');
 const webpackConf = require('./webpack.base');
 
 module.exports = merge.smart(webpackConf, {
-
+    {{!-- CONF_START --}}
     entry: {
         app: [
             './' + paths.toPath('src.assets/styles') + '/index.js',
@@ -18,7 +18,7 @@ module.exports = merge.smart(webpackConf, {
     cache: true,
 
     plugins: [
-
+        {{!-- PLUGINS_START --}}
         new HtmlWebpackPlugin({
             template: paths.toPath('src.root/templates') + '/index.ejs',
             inject: true,
@@ -31,7 +31,8 @@ module.exports = merge.smart(webpackConf, {
             //@see https://calendar.perfplanet.com/2016/prefer-defer-over-async/
             defaultAttribute: 'defer'
         }),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        {{!-- PLUGINS_END --}}
     ]
-
+    {{!-- CONF_END --}}
 });

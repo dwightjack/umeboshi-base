@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const paths = require('./paths');
 
@@ -8,33 +7,10 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 const srcPath = paths.toAbsPath('src.assets');
 const destPath = paths.toAbsPath('dist.assets');
 
-const styleLoaders = [
-    { loader: 'css-loader',
-        options: {
-            modules: true,
-            camelCase: true,
-            importLoaders: 1,
-            sourceMap: true,
-            localIdentName: '[name]__[local]---[hash:base64:5]'
-        }
-    },
-    { loader: 'resolve-url-loader', options: { sourceMap: true } },
-    { loader: 'postcss-loader', options: { sourceMap: true } },
-    'resolve-url-loader',
-    { loader: 'sass-loader',
-        options: {
-            sourceMap: true,
-            precision: 10,
-            includePaths: [
-                paths.toAbsPath('src.assets/styles'),
-                'node_modules'
-            ],
-            outputStyle: 'expanded'
-        }
-    }
-];
+const styleLoaders = require('./style-loaders');
 
 module.exports = {
+    {{!-- CONF_STARTS --}}
     context: process.cwd(),
     externals: {},
     entry: {},
@@ -65,6 +41,7 @@ module.exports = {
         filename: paths.js + '/[name].js'
     },
     plugins: [
+        {{!-- PLUGINS_START --}}
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             __PRODUCTION__: PRODUCTION,
@@ -86,10 +63,12 @@ module.exports = {
                 );
             }
         })
+        {{!-- PLUGINS_END --}}
     ],
     module: {
         rules: [
             { parser: { amd: false } },
+            {{!-- MODULES_START --}}
             {
                 test: /\.js$/,
                 include: [srcPath],
@@ -108,12 +87,9 @@ module.exports = {
             }, {
                 test: /\.(scss|css)$/,
                 exclude: /(node_modules|vendors)/,
-                use: (PRODUCTION ? ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: styleLoaders
-                }) : ['style-loader'].concat(styleLoaders))
+                use: styleLoaders
             }, {
-                test: /\.(eot|svg|ttf|woff|woff2|jpg|png|gif)$/,
+                test: /\.(eot|svg|ttf|woff|woff2|jpe?g|png|gif)$/,
                 include: [
                     paths.toAbsPath('src.assets/images'),
                     paths.toAbsPath('src.assets/fonts')
@@ -123,7 +99,7 @@ module.exports = {
                     name: (PRODUCTION ? '[path][name].[hash:10].[ext]' : '[path][name].[ext]'),
                     context: paths.toPath('src.assets')
                 }
-            }
+            }{{!-- MODULES_END --}}
         ]
     },
     node: {
@@ -132,10 +108,13 @@ module.exports = {
         tls: 'empty'
     },
     resolve: {
+        {{!-- RESOLVE --}}
         alias: {
+            {{!-- RESOLVE.ALIAS --}}
             styles: paths.toAbsPath('src.assets/styles'),
             images: paths.toAbsPath('src.assets/images')
         },
         modules: ['node_modules', paths.toAbsPath('src.assets/vendors')]
     }
+    {{!-- CONF_END --}}
 };

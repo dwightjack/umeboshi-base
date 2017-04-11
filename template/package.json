@@ -27,14 +27,17 @@
     "eslint": "eslint -c ./app/assets/js/.eslintrc.json \"./app/assets/js/**/*.js\"",
     "stylelint": "stylelint './app/assets/**/*.scss' --config .stylelintrc.json",
     "lint": "npm run eslint && npm run stylelint"
+    {{!-- SCRIPTS --}}
   },
   "dependencies": {
+    {{!-- DEPENDENCIES --}}
     "babel-polyfill": "6.23.0",
     "babel-runtime": "6.23.0",
     "normalize.css": "5.0.0",
     "sass-mq": "3.3.2"
   },
   "devDependencies": {
+    {{!-- DEV_DEPENDENCIES --}}
     "autoprefixer": "6.7.7",
     "babel-core": "6.24.0",
     "babel-jest": "19.0.0",
@@ -52,7 +55,6 @@
     "eslint-config-airbnb-base": "11.1.2",
     "eslint-import-resolver-webpack": "0.8.1",
     "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "4.0.0",
     "eventsource-polyfill": "0.9.6",
     "express": "4.15.2",
     "extract-text-webpack-plugin": "2.1.0",
