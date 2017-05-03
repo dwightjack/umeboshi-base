@@ -1,4 +1,4 @@
-# Umeboshi React Template
+# Umeboshi Base Template
 
 ## Features
 
