@@ -18,6 +18,7 @@ const config = merge.smart({
 const compiler = webpack(config);
 
 const server = new WebpackDevServer(compiler, {
+    public: address,
     contentBase: paths.toAbsPath('dist.root'),
     compress: false,
     hot: {{tmpl.hmr}},
@@ -25,6 +26,11 @@ const server = new WebpackDevServer(compiler, {
     //TODO: temporary fix for https://github.com/mxstbr/react-boilerplate/issues/370 and https://github.com/webpack/style-loader/pull/96
     publicPath,
     stats: config.stats,
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    },
     setup(app) {
         if (middlewares.length > 0) {
             middlewares.forEach((middleware) => app.use(middleware));
