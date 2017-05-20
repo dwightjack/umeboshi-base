@@ -13,18 +13,17 @@ const loaders = [
             localIdentName: '[name]__[local]---[hash:base64:5]'
         }
     },
-    { loader: 'resolve-url-loader', options: { sourceMap: true } },
-    { loader: 'postcss-loader', options: { sourceMap: true } },
     'resolve-url-loader',
+    'postcss-loader',
     { loader: 'sass-loader',
-        options: {
-            sourceMap: true,
-            precision: 10,
+        query: {
             includePaths: [
                 paths.toAbsPath('src.assets/styles'),
                 'node_modules'
             ],
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            sourceMap: true,
+            precision: 10
         }
     }
 ];
