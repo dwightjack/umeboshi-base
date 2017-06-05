@@ -1,6 +1,6 @@
 {
   "name": "umeboshi-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Umeboshi Base Template",
   "main": "index.js",
   "scripts": {

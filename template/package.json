@@ -25,7 +25,7 @@
     "build": "npm run clean && npm run modernizr && npm run webpack",
     "build:production": "npm run clean && npm run lint && npm run modernizr:production && npm run webpack:production",
     "eslint": "eslint -c ./app/assets/js/.eslintrc.json \"./app/assets/js/**/*.js\"",
-    "stylelint": "stylelint './app/assets/**/*.scss' --config .stylelintrc.json",
+    "stylelint": "stylelint \"./app/assets/**/*.scss\" --config .stylelintrc.json",
     "lint": "npm run eslint && npm run stylelint"
     {{!-- SCRIPTS --}}
   },
