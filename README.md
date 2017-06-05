@@ -2,11 +2,11 @@
 
 ## Features
 
-* [React](https://facebook.github.io/react/) and [Webpack 2](https://webpack.js.org/) with HMR 
-* ES6+ and JSX with [Babel](https://babeljs.io/)
-* Unit test with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
+* Webpack 2](https://webpack.js.org/)
+* ES6+ with [Babel](https://babeljs.io/)
+* Unit test with [Jest](https://facebook.github.io/jest/)
 * CSS and JS linting with [ESLint](http://eslint.org/) (airbnb preset) and [Stylelint](https://stylelint.io/)
-* [Sass](http://sass-lang.com/) with [node-sass](https://github.com/sass/node-sass) 
+* [Sass](http://sass-lang.com/) with [node-sass](https://github.com/sass/node-sass)
 * CSS [post-processing](https://github.com/postcss/postcss)
 * [CSS Modules](https://github.com/css-modules/css-modules)
 * Em based media-queries via [sass-mq](https://github.com/sass-mq/sass-mq)
@@ -24,13 +24,13 @@ Install [umeboshi-cli](https://github.com/dwightjack/umeboshi-cli) if not yet in
 $ npm install -g umeboshi-cli
 ```
 
-Use `react` as template
+Use `base` as template
 
 ```
-$ umeboshi create react <project-folder>
+$ umeboshi create base <project-folder>
 ```
 
-Example: 
+Example:
 
 ```
 $ umeboshi create base my-project-folder
