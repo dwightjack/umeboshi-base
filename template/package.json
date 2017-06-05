@@ -11,7 +11,7 @@
   "contributors": [],
   "main": "app/assets/js/app.js",
   "engines": {
-    "node": "^6.9.0"
+    "node": ">=6.9.0"
   },
   "scripts": {
     "start": "npm run clean && npm run modernizr && node ./scripts/webpack-server.js",
