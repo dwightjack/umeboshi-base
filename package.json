@@ -1,6 +1,6 @@
 {
   "name": "umeboshi-base",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Umeboshi Base Template",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "Marco Solazzi <marco.solazzi@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "^6.9.0"
+    "node": ">=6.9.0"
   },
   "devDependencies": {
     "eslint": "3.18.0",
