@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+const WebpackChunkHash = require('webpack-chunk-hash');
 const merge = require('webpack-merge');
 
 const webpackConf = require('./webpack.base');
@@ -65,7 +67,13 @@ module.exports = merge.smart(webpackConf, {
             chunks: ['vendors']
         }),
 
-        new webpack.HashedModuleIdsPlugin()
+        new webpack.HashedModuleIdsPlugin(),
+        new WebpackChunkHash(),
+        new ChunkManifestPlugin({
+            filename: 'chunk-manifest.json',
+            manifestVariable: 'webpackManifest',
+            inlineManifest: true
+        })
         {{!-- PLUGINS_END --}}
     ]
     {{!-- CONF_END --}}
