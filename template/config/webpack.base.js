@@ -72,6 +72,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 include: [srcPath],
+                exclude: [path.join(srcPath, paths.vendors)],
                 loader: 'babel-loader',
                 options: {
                     cacheDirectory: true
