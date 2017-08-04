@@ -20,11 +20,11 @@
 
 ## Installation
 
-Clone this repo:
+## Installation
 
-    git clone git://github.com/dwightjack/umeboshi.git
+1) Clone the repo
 
-From project root:
+2) From project root:
 
 * `npm install` or `yarn`
 
