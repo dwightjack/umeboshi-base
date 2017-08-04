@@ -49,6 +49,10 @@ module.exports = {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
         }),
+
+        new webpack.NamedModulesPlugin(),
+        new webpack.NamedChunksPlugin(),
+
         // @see https://github.com/vuejs-templates/webpack/blob/master/template/build/webpack.prod.conf.js#L67
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors',
@@ -71,8 +75,7 @@ module.exports = {
             {{!-- MODULES_START --}}
             {
                 test: /\.js$/,
-                include: [srcPath],
-                exclude: [path.join(srcPath, paths.vendors)],
+                include: [path.join(srcPath, paths.js), path.join(srcPath, paths.styles)],
                 loader: 'babel-loader',
                 options: {
                     cacheDirectory: true
@@ -113,7 +116,8 @@ module.exports = {
         alias: {
             {{!-- RESOLVE.ALIAS --}}
             styles: paths.toAbsPath('src.assets/styles'),
-            images: paths.toAbsPath('src.assets/images')
+            images: paths.toAbsPath('src.assets/images'),
+            '@': paths.toAbsPath('src.assets/js')
         },
         modules: ['node_modules', paths.toAbsPath('src.assets/vendors')]
     }

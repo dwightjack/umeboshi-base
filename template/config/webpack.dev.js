@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const merge = require('webpack-merge');
@@ -30,8 +29,7 @@ module.exports = merge.smart(webpackConf, {
         new ScriptExtHtmlWebpackPlugin({
             //@see https://calendar.perfplanet.com/2016/prefer-defer-over-async/
             defaultAttribute: 'defer'
-        }),
-        new webpack.NamedModulesPlugin(),
+        })
         {{!-- PLUGINS_END --}}
     ]
     {{!-- CONF_END --}}

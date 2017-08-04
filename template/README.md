@@ -3,7 +3,7 @@
 > {{description}}
 
 ## Features
-* ES6+ with [Babel](https://babeljs.io/)
+* ES6+ with [Babel](https://babeljs.io/), [env](https://github.com/babel/babel-preset-env) and [stage-2](https://babeljs.io/docs/plugins/preset-stage-2/) presets
 * Unit test with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
 * CSS and JS linting with [ESLint](http://eslint.org/) (airbnb preset) and [Stylelint](https://stylelint.io/)
 * [Sass](http://sass-lang.com/) with [node-sass](https://github.com/sass/node-sass) 
