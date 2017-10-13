@@ -4,4 +4,6 @@
 
 @import "print";
 //utility come last so they can overwrite stuff...
-@import "utility";
+:global {
+    @import "utility";
+}
