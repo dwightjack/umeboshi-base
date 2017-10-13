@@ -25,6 +25,15 @@
         "no-missing-end-of-source-newline": null,
         "declaration-empty-line-before": "never",
 
+        "selector-pseudo-class-no-unknown": [true, {
+            "ignorePseudoClasses": [
+                "export",
+                "import",
+                "global",
+                "local"
+            ]
+        }],
+
         "scss/at-rule-no-unknown": true,
 
         "order/properties-order": [
