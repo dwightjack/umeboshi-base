@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const merge = require('webpack-merge');
@@ -18,6 +19,10 @@ module.exports = merge.smart(webpackConf, {
 
     plugins: [
         {{!-- PLUGINS_START --}}
+
+        new webpack.NamedModulesPlugin(),
+        new webpack.NamedChunksPlugin(),
+
         new HtmlWebpackPlugin({
             template: paths.toPath('src.root/templates') + '/index.ejs',
             inject: true,
