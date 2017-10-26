@@ -37,14 +37,13 @@
   },
   "devDependencies": {
     {{!-- DEV_DEPENDENCIES --}}
-    "umeboshi-scripts": "^0.1.0",
-    "umeboshi-config": "^0.1.0",
+    "babel-preset-umeboshi": "^0.1.0",
+    "cross-env": "5.0.5",
     "eslint-config-umeboshi": "^0.1.0",
     "eslint-config-umeboshi-node": "^0.1.0",
-    "babel-preset-umeboshi": "^0.1.0",
+    "rimraf": "2.6.1",
     "stylelint-config-umeboshi": "^0.1.0",
-    "umeboshi-scripts": "^0.1.0",
-    "cross-env": "5.0.5",
-    "rimraf": "2.6.1"
+    "umeboshi-config": "^0.1.0",
+    "umeboshi-scripts": "^0.1.0"
   }
 }
