@@ -1,5 +1,6 @@
 # Umeboshi Base Template
 
+## This template is DEPRECATED. Please update to the latest [umeboshi-cli](https://github.com/dwightjack/umeboshi-cli) and use [`webpack`](https://github.com/dwightjack/umeboshi-template-webpack) template
 ## Features
 
 * [Webpack 2](https://webpack.js.org/)
